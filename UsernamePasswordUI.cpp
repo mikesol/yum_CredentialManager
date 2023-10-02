@@ -4,7 +4,7 @@
 
 using namespace YumAudio;
 
-typedef AppCredentials::UsernamePasswordUI UsernamePasswordUI;
+typedef UsernamePasswordUI UsernamePasswordUI;
 
 UsernamePasswordUI::UsernamePasswordUI ()
 {

@@ -21,10 +21,10 @@ public:
     UsernamePasswordUI ();
     ~UsernamePasswordUI () override;
     /// if a function is defined, then virtual function loginButtonClicked won't get a call
-    std::function<void (const UsernameAndPassword&)> onLoginButtonClicked { nullptr };
+    std::function<void (const YumAudio::UsernameAndPassword&)> onLoginButtonClicked { nullptr };
     
     /// returns the current contents of the text editors.
-    UsernameAndPassword getCurrentEditorCredentials ();
+    YumAudio::UsernameAndPassword getCurrentEditorCredentials ();
     
     /// after you're finished with the password editor you should reset it for good measure
     void resetPasswordEditor ();
@@ -42,7 +42,7 @@ public:
     
 protected:
     /// will only be called if onLoginButtonClicked == nullptr
-    virtual void loginButtonClicked (const UsernameAndPassword& credentials);
+    virtual void loginButtonClicked (const YumAudio::UsernameAndPassword& credentials);
     
     void resized () override;
     
@@ -58,7 +58,7 @@ private:
     
     void attemptLogin ();
     void updateCredentialsPopup (Component* source);
-    void fillEditorsForKeychainUser (const Username& user);
+    void fillEditorsForKeychainUser (const YumAudio::Username& user);
     void closeCredentialsPopup ();
     
 	class ThreadedTask : private Thread
